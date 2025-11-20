@@ -41,17 +41,26 @@ This project captures a person’s face using a webcam, detects and recognizes t
 
 > Add real screenshots in the `/screenshots` folder.
 
+### Login  
+![Login](screenshots/login.png)
+
 ### Home  
 ![Home](screenshots/home.png)
 
 ### Face Detection  
 ![Detection](screenshots/detection.png)
 
-### Recognition  
-![Recognition](screenshots/recognition.png)
+### Employees  
+![Employees](screenshots/employees.png)
 
 ### Attendance  
 ![Attendance](screenshots/attendance.png)
+
+### Add Employee
+![Add Employees](screenshots/addemployee.png)
+
+### Update Employee
+![Update Employee](screenshots/updateemployee.png)
 
 ---
 
