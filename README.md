@@ -1,150 +1,157 @@
-# Facial Recognition Attendance System
+# 👤📸 Facial Recognition Attendance System
 
-A complete facial recognition attendance system with a web-based admin interface built with Flask and SQLite.
+A smart **AI-powered attendance system** that uses **facial recognition** instead of manual registers or ID cards.  
+This project captures a person’s face using a webcam, detects and recognizes the individual using machine learning models, and marks attendance automatically in a database.
 
-## Features
+---
 
-- **Web-based Admin Interface**: Add employees, view attendance records, and manage the system through a modern web UI
-- **Real-time Facial Recognition**: Uses OpenCV and face_recognition library for accurate face detection
-- **Database Integration**: SQLite database stores employee information and attendance records
-- **Face Encoding Storage**: Securely stores facial encodings in the database
-- **Attendance Tracking**: Automatic attendance marking with duplicate prevention
-- **Responsive Design**: Modern, mobile-friendly web interface
+## ⭐ Features
 
-## Installation
+### 🔍 Face Detection
+- Detects faces through a live webcam feed  
+- Uses Haar Cascade or DLib face detection models  
 
-1. **Clone or download the project files**
+### 🧠 Face Recognition
+- Identifies registered individuals  
+- Uses deep learning encodings  
+- Works with real-time video  
 
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 📝 Attendance Marking
+- Automatically logs:
+  - Name  
+  - Date  
+  - Time  
+- Avoids duplicate entries in a day  
 
-3. **Run the Flask application**:
-   ```bash
-   python app.py
-   ```
+### 👤 User Registration
+- Allows adding new students/employees  
+- Stores face encodings in a database/directory  
 
-4. **Access the web interface**:
-   Open your browser and go to `http://127.0.0.1:5000`
+### 💾 Database Support
+- CSV / Excel  
+- SQLite / MySQL  
 
-## Usage
+### 🖥️ Admin Dashboard
+- View attendance history  
+- View registered users  
 
-### Admin Login
-- **Default credentials**:
-  - Username: `admin`
-  - Password: `admin123`
-- **Important**: Change the default password in the code for security!
+---
 
-### Adding Employees
+## 📸 Screenshots
 
-1. Log in to the admin dashboard
-2. Click "Add New Employee"
-3. Fill in the employee's name and email
-4. Upload a clear face image (JPG, PNG format)
-5. Click "Add Employee"
+> Add real screenshots in the `/screenshots` folder.
 
-**Image Requirements**:
-- Clear, well-lit photo
-- Face should be clearly visible
-- Supported formats: JPG, PNG
-- Maximum size: 16MB
+### Home  
+![Home](screenshots/home.png)
 
-### Editing Employees
+### Face Detection  
+![Detection](screenshots/detection.png)
 
-1. On the dashboard, find the employee card you want to edit
-2. Click the "Edit" button on the employee card
-3. Update the name, email, or upload a new face image
-4. Click "Update Employee"
+### Recognition  
+![Recognition](screenshots/recognition.png)
 
-**Notes:**
-- You can update name and email without changing the image
-- Uploading a new image will replace the current face photo
-- Email addresses must be unique across all employees
+### Attendance  
+![Attendance](screenshots/attendance.png)
 
-### Running Attendance System
+---
 
-1. From the dashboard, click "Run Attendance System"
-2. The system will open a camera window
-3. Employees will be automatically recognized and attendance marked
-4. Press 'q' to stop the attendance system
+## 🧠 Technologies Used
 
-### Resetting Daily Attendance
+### Core  
+- Python  
+- OpenCV  
+- face_recognition  
+- NumPy  
 
-1. Click the red "Reset Today's Attendance" button on the dashboard
-2. Confirm the action (double confirmation required)
-3. All attendance records for the current day will be permanently deleted
+### Database  
+- CSV / Excel / SQLite / MySQL  
 
-**⚠️ Warning:** This action cannot be undone. Use with caution!
+---
 
-### Viewing Attendance Records
-
-1. Click "View All Attendance" from the dashboard
-2. Filter records by date or name
-3. Export attendance data to CSV
-
-## Database Schema
-
-The system uses SQLite with the following tables:
-
-- **employees**: Stores employee information and face encodings
-- **attendance**: Stores attendance records with timestamps
-- **admins**: Stores admin user credentials
-
-## File Structure
+## 📦 Project Structure
 
 ```
-facial_recognition_attendance/
-├── app.py                      # Main Flask web application
-├── attendance_system_db.py     # Facial recognition attendance system
-├── attendance.db              # SQLite database (created automatically)
-├── requirements.txt           # Python dependencies
-├── run.py                     # Easy startup script
-├── README.md                  # This file
-├── templates/                 # HTML templates
-│   ├── login.html
-│   ├── dashboard.html
-│   ├── add_employee.html
-│   └── attendance.html
-└── static/                    # Static files (CSS, JS, images)
-    └── faces/                 # Uploaded face images
+Facial-Recognition-Attendance/
+│── images/
+│── screenshots/
+│── encodings/
+│── models/
+│── main.py
+│── register.py
+│── attendance.csv
+│── requirements.txt
+│── README.md
+└── ...
 ```
 
-## Security Notes
+---
 
-- Change the default admin password before deployment
-- The application runs on localhost by default
-- For production deployment, consider:
-  - Using environment variables for secrets
-  - Adding HTTPS
-  - Implementing proper user authentication
-  - Database connection pooling
+## ⚙️ Installation & Setup
 
-## Troubleshooting
+### Clone Repository
+```bash
+git clone https://github.com/adityabansal13/Facial-Recognition-Attendance
+cd Facial-Recognition-Attendance
+```
 
-### Camera Issues
-- Ensure camera permissions are granted
-- Check if camera is being used by another application
-- Try restarting the application
+### Create Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate    # Windows
+```
 
-### Face Recognition Issues
-- Ensure good lighting when taking photos
-- Make sure faces are clearly visible in uploaded images
-- The system works best with front-facing, well-lit photos
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-### Database Issues
-- The database is created automatically on first run
-- If issues occur, delete `attendance.db` and restart the application
+### Run Main App
+```bash
+python main.py
+```
 
-## Dependencies
+---
 
-- Flask: Web framework
-- face_recognition: Facial recognition library
-- OpenCV: Computer vision library
-- NumPy: Numerical computing
-- Pillow: Image processing
-- Werkzeug: WSGI utility library
+## 🧪 Register New Faces
 
-## License
+```bash
+python register.py
+```
 
-This project is for educational purposes. Modify and distribute as needed.
+---
+
+## 🔍 How It Works
+
+1. Load stored face encodings  
+2. Capture webcam feed  
+3. Detect faces using ML model  
+4. Compute encodings from live frame  
+5. Compare with stored encodings  
+6. Mark attendance  
+
+---
+
+## 🧩 Future Improvements
+
+- Cloud attendance storage  
+- Mobile app integration  
+- Face mask detection  
+- Anti-spoofing (liveness detection)  
+- Exportable reports  
+
+---
+
+## 🤝 Contributing
+
+Pull requests and issues are welcome!
+
+---
+
+## 📄 License
+MIT License
+
+---
+
+## 👨‍💻 Author
+**Aditya Bansal**
