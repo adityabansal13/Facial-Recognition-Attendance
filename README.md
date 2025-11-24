@@ -39,8 +39,6 @@ This project captures a person’s face using a webcam, detects and recognizes t
 
 ## 📸 Screenshots
 
-> Add real screenshots in the `/screenshots` folder.
-
 ### Login  
 ![Login](screenshots/login.png)
 
@@ -48,7 +46,7 @@ This project captures a person’s face using a webcam, detects and recognizes t
 ![Home](screenshots/home.png)
 
 ### Face Detection  
-![Detection](screenshots/detection.png)
+![Detection](screenshots/)
 
 ### Employees  
 ![Employees](screenshots/employees.png)
